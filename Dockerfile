@@ -1,5 +1,6 @@
-FROM python:3.4-alpine
-ADD . /flask_app
-WORKDIR /flask_app
+FROM python:3.6-alpine
+COPY . /app
+WORKDIR /app
 RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+ENTRYPOINT ["python"]
+CMD ["app.py"]
